@@ -16,13 +16,19 @@
             <tbody>
                 @foreach ($messages as $message)
                 <tr>
+                    <tr>
                     <td>{!! link_to_route('messages.show', $message->id, ['id' => $message->id]) !!}</td>
+                    <td>{{ $message->title }}</td>
                     <td>{{ $message->content }}</td>
+                    </tr>
                 </tr>
                 @endforeach
             </tbody>
         </table>
     @endif
+    
+    {{ $messages->render('pagination::bootstrap-4') }}
+    
     {!! link_to_route('messages.create', '新規メッセージの投稿', null, ['class' => 'btn btn-primary']) !!}
     
 @endsection
