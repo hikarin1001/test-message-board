@@ -14,7 +14,7 @@ class AddTitleToMessagesTable extends Migration
     public function up()
     {
         Schema::table('messages', function (Blueprint $table) {
-            $table->string('title');
+         $table->string('title');
         });
     }
 
